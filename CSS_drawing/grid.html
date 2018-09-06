@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>B</title>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        margin: 0px;
+        background-image: linear-gradient(#000, #222);
+        min-height: 100vh;
+      }
+
+      #grid-container {
+        display: grid;
+        grid-template-columns: 30vw 70vw;
+        grid-template-rows: 50vh 50vh;
+        grid-gap: 0px;
+
+      }
+
+      .grid-item {
+        background-image: radial-gradient(#fff, #999);
+        margin: 0px;
+      }
+
+      .round {
+        border-radius: 60vw;
+      }
+
+    </style>
+</head>
+
+<body>
+<div id="grid-container">
+  <div class="grid-item"></div>
+  <div class="grid-item round"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item round"></div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>egg</title>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        margin: 0px;
+        background: #4c0000;
+        min-height: 100vh;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #outer {
+        background: white;
+        width: 400px;
+        height: 400px;
+        border-radius: 250px;
+        position: relative;
+      
+        animation: spin 8s linear infinite;
+
+      }
+
+      #inner {
+        background: yellow;
+        width: 200px;
+        height: 200px;
+        border-radius: 200px;
+        margin: 100px;
+
+        animation: spin 4s reverse linear infinite;
+        transition: all 5000ms ease;
+
+      }
+
+      #outer:hover #inner, #inner:hover {
+        background: orange;
+      }
+
+      @keyframes spin { 
+        50% { transform: rotate(180deg) scaleX(0.95); } 
+        100% { transform: rotate(360deg) scaleX(1); } 
+      }
+
+
+    </style>
+</head>
+
+<body>
+<div id="outer">
+  <div id="inner"></div>
+</div>
+</body>
+</html>
