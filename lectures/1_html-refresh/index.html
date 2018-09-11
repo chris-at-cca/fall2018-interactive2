@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="viewport" content="width = device-width,initial-scale = 1, user-scalable = no">
+		<link rel="icon" type="image/png" href="">
+		<title>HTML/CSS Refresh</title>
+		<link rel="stylesheet" type="text/css" href="../assets/fonts.css">
+		<link rel="stylesheet" type="text/css" href="../assets/style.css">
+
+	</head>
+	<body>
+		<!-- adapted from lectures by Will Ruby http://spring2018.will.graphics/ -->
+		<!-- slide 1 -->
+		<div class="card title" notes="
+
+			this will be a short review of html and css, and some of the things we learned last semester
+
+		">
+			<div class="centerMiddle">
+				<h2 class="box">
+					HTML / CSS Refresh
+				</h2>
+			</div>
+		</div>
+
+		<div class="card" notes="
+
+			lets review some of the elements we know
+
+		">
+			<div class="centerMiddle">
+				<div class="grid">
+					<div class="columnOne">
+						<pre>
+&lt;html&gt;
+&lt;head&gt;
+&lt;body&gt;
+&lt;h1&gt;&lt;h2&gt;&lt;h3&gt;
+&lt;p&gt;
+&lt;strong&gt;
+&lt;em&gt;
+&lt;ol&gt;, &lt;ul&gt;, &lt;li&gt;
+						</pre>
+					</div>
+					<div class="columnTwo"></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- slide 2 -->
+		<div class="card" notes="
+
+			html, head, and body define the highest level structure of your page
+
+			html is the root of everything, head contains metadata and information about the page, this doesn't render itself
+
+			body contains the visible content of the page, or what you see in your browser
+
+		">
+			<div class="centerMiddle">
+				<div class="grid">
+					<div class="columnOne">
+						<pre>
+&lt;html&gt;
+&lt;head&gt;
+&lt;body&gt;
+<span style="color:#aaa;">&lt;h1&gt;&lt;h2&gt;&lt;h3&gt;
+&lt;p&gt;
+&lt;strong&gt;
+&lt;em&gt;
+&lt;ol&gt;, &lt;ul&gt;, &lt;li&gt;</span>]
+						</pre>
+					</div>
+					<div class="columnTwo">
+						<pre>
+<strong>&lt;html&gt;</strong>
+<strong>&lt;head&gt;</strong>
+<em>... meta info ...</em>
+<strong>&lt;/head&gt;</strong>
+<strong>&lt;body&gt;</strong>
+<em>... content ...</em>
+<strong>&lt;/body&gt;</strong>
+<strong>&lt;/html&gt;</strong>
+						</pre>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- slide 3 -->
+		<div class="card" notes="
+
+			tags indicate what they are rendering. there are closing and opening tags.
+
+			a <p> tag is a paragraph
+
+		">
+			<div class="centerMiddle">
+				<div class="grid">
+					<div class="columnOne">
+						<pre><span style="color:#aaa;">&lt;html&gt;
+&lt;head&gt;
+&lt;body&gt;
+&lt;h1&gt;&lt;h2&gt;&lt;h3&gt;</span>
+&lt;p&gt;
+<span style="color:#aaa;">&lt;strong&gt;
+&lt;em&gt;
+&lt;ol&gt;, &lt;ul&gt;, &lt;li&gt;</span>
+						</pre>
+					</div>
+					<div class="columnTwo">
+						<pre>
+<strong>&lt;p&gt;</strong>
+	Sketchpad (aka Robot Draftsman) was a revolutionary
+	computer program written by Ivan Sutherland in 1963
+	in the course of his PhD thesis, for which he received
+	the Turing Award in 1988, and the Kyoto Prize in 2012.
+<strong>&lt;/p&gt;</strong>
+						</pre>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- slide 3.5 -->
+		<div class="card build" notes="
+
+			here we see that rendered
+
+		">
+			<div class="centerMiddle">
+				<div class="grid">
+					<div class="columnOne">
+						<pre><span style="color:#aaa;">&lt;html&gt;
+&lt;head&gt;
+&lt;body&gt;
+&lt;h1&gt;&lt;h2&gt;&lt;h3&gt;</span>
+&lt;p&gt;
+<span style="color:#aaa;">&lt;strong&gt;
+&lt;em&gt;
+&lt;ol&gt;, &lt;ul&gt;, &lt;li&gt;</span>
+						</pre>
+					</div>
+					<div class="columnTwo">
+<p>
+	Sketchpad (aka Robot Draftsman) was a revolutionary
+	computer program written by Ivan Sutherland in 1963
+	in the course of his PhD thesis, for which he received
+	the Turing Award in 1988, and the Kyoto Prize in 2012.
+</p>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- slide 4 -->
+		<div class="card" notes="
+
+			there are all sorts of other tags, typically 
+
+		">
+			<div class="centerMiddle">
+				<div class="grid">
+					<div class="columnOne">
+						<pre>
+<span style="color:#aaa;">&lt;html&gt;
+&lt;head&gt;
+&lt;body&gt;
+&lt;h1&gt;&lt;h2&gt;&lt;h3&gt;
+&lt;p&gt;</span>
+&lt;strong&gt;
+&lt;em&gt;
+<span style="color:#aaa;">&lt;ol&gt;, &lt;ul&gt;, &lt;li&gt;</span>
+						</pre>
+					</div>
+					<div class="columnTwo">
+						<pre>
+<strong>&lt;p&gt;</strong>
+	Sketchpad (<strong>&lt;em&gt;</strong>aka Robot Draftsman<strong>&lt;/em&gt;</strong>) was a
+	revolutionary computer program written by <strong>&lt;strong&gt;</strong>Ivan
+	Sutherland<strong>&lt;/strong&gt;</strong> in 1963 in the course of his PhD
+	thesis, for which he received the Turing Award in 1988,
+	and the Kyoto Prize in 2012.
+<strong>&lt;/p&gt;</strong>
+						</pre>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- slide 4.5 -->
+		<div class="card build" notes="
+
+			here we see that rendered
+		
+		">
+			<div class="centerMiddle">
+				<div class="grid">
+					<div class="columnOne">
+						<pre>
+<span style="color:#aaa;">&lt;html&gt;
+&lt;head&gt;
+&lt;body&gt;
+&lt;h1&gt;&lt;h2&gt;&lt;h3&gt;
+&lt;p&gt;</span>
+&lt;strong&gt;
+&lt;em&gt;
+<span style="color:#aaa;">&lt;ol&gt;, &lt;ul&gt;, &lt;li&gt;</span>
+						</pre>
+					</div>
+					<div class="columnTwo">
+<p>
+	Sketchpad (<em>aka Robot Draftsman</em>) was a revolutionary
+	computer program written by <strong>Ivan Sutherland</strong> in 1963
+	in the course of his PhD thesis, for which he received
+	the Turing Award in 1988, and the Kyoto Prize in 2012.
+</p>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- slide 5 - tag attributes -->
+
+		<div class="card title" notes="
+
+			lets talk about element attributes
+
+			for certain elements, you&#39;ll need to specify more
+			about them then just what they contain.
+
+		">
+			<div class="centerMiddle">
+				<h2 class="box">
+					attributes
+				</h2>
+			</div>
+		</div>
+
+
+		<!-- slide 6 -->
+
+		<div class="card" notes="
+
+			for instance maybe we want to set a style value on a certain
+			element
+
+		">
+			<div class="centerMiddle">
+				<pre style="font-size:130%;">&lt;p&gt;this is default color text&lt;/p&gt;
+				</pre>
+			</div>
+		</div>
+
+		<!-- slide 6.1 -->
+
+		<div class="card build" notes="
+
+			we can do that with the style attribute, which lets you write 
+			css specific to one element
+
+		">
+			<div class="centerMiddle">
+				<pre style="font-size:130%;">&lt;p <div class="annotation up">attribute name</div><strong>style</strong>="color:red"&gt;this is red text&lt;/p&gt;
+				</pre>
+			</div>
+		</div>
+
+		<!-- slide 6.2 -->
+
+		<div class="card build" notes="
+
+			we wrap the value of the attribute in quotes and set it equal to the name
+
+		">
+			<div class="centerMiddle">
+				<pre style="font-size:130%;">&lt;p style="<div class="annotation down">attribute value</div><strong style="background-color: PaleTurquoise">color:red</strong>"&gt;this is red text&lt;/p&gt;
+				</pre>
+			</div>
+		</div>
+
+
+		<!-- slide 6.3 -->
+		<div class="card build" notes="
+
+
+		">
+			<div class="centerMiddle">
+				<pre style="font-size:130%;">&lt;p <div class="annotation up">attribute name</div><strong>style</strong>="<div class="annotation down">attribute value</div><strong style="background-color: PaleTurquoise">color:red</strong>"&gt;<span style="color:red">this is red text</span>&lt;/p&gt;
+				</pre>
+			</div>
+		</div>
+
+
+		<!-- CSS -->
+		<!-- slide 7 -->
+		<div class="card title" notes="
+
+			css stands for &#39;cascading style sheet&#39; and its the language
+			we use to define the style and layout of our pages beyond the browser
+			defaults.
+
+		">
+			<div class="centerMiddle">
+				<h2 class="box">
+					css
+				</h2>
+			</div>
+		</div>
+
+
+		<!-- slide 8 -->
+		<div class="card" notes="
+
+			we used it like this already. the content of the style tag are css properties
+
+		">
+			<div class="centerMiddle">
+				<pre style="font-size:130%;">&lt;p <strong>style</strong>="<strong style="background-color: PaleTurquoise">color:red</strong>"&gt;this is red text&lt;/p&gt;
+				</pre>
+			</div>
+		</div>
+
+
+		<!-- slide 9 -->
+		<div class="card" notes="
+
+			but if you wanted every p tag to be red, doing inline style definitions is a drag
+			you can also use a style declartion
+
+		">
+			<div class="centerMiddle">
+				<pre style="font-size:130%;">in head or a separate doc...
+&lt;style&gt;
+	p {
+		color:red;
+	}
+&lt;/style&gt;
+
+later...
+&lt;p&gt;this is red text&lt;/p&gt;
+				</pre>
+			</div>
+		</div>
+
+
+		<!-- slide 9.1 -->
+		<div class="card build" notes="
+
+			but if you wanted every p tag to be red, doing inline style definitions is a drag
+			you can also use a style declartion
+
+		">
+			<div class="centerMiddle">
+				<pre style="font-size:130%;">
+&lt;style&gt;
+   <strong> p </strong>{
+		color:red;
+	}
+&lt;/style&gt;
+
+				</pre>
+			</div>
+		</div>
+
+		<!-- slide 9.2 -->
+		<div class="card build" notes="
+
+			but if you wanted every p tag to be red, doing inline style definitions is a drag
+			you can also use a style declartion
+
+		">
+			<div class="centerMiddle">
+				<pre style="font-size:130%;">
+&lt;style&gt;
+	p <strong>{</strong>
+		color:red;
+	<strong>}</strong>
+&lt;/style&gt;
+
+				</pre>
+			</div>
+		</div>
+
+
+		<!-- slide 9.3 -->
+		<div class="card build" notes="
+
+			but if you wanted every p tag to be red, doing inline style definitions is a drag
+			you can also use a style declartion
+
+		">
+			<div class="centerMiddle">
+				<pre style="font-size:130%;">
+&lt;style&gt;
+	p {
+		<strong>color</strong>:<strong style="background:PaleTurquoise">red</strong>;
+	}
+&lt;/style&gt;
+
+				</pre>
+			</div>
+		</div>
+		
+		<!-- slide 10 -->
+		<div class="card" notes="
+
+			we can do that with the style attribute, which lets you write 
+			css specific to one element
+
+		">
+			<div class="centerMiddle">
+				<pre style="font-size:130%;">&lt;p id="myFavoriteParagraph" class="brownText"&gt;my favorite text&lt;/p&gt;
+				</pre>
+			</div>
+		</div>
+
+		<!-- slide 10.1 -->
+		<div class="card build" notes="
+
+			id and class are ways we can reference specific elements from css, or js
+
+			id&#39;s there should only be ONE of
+
+			classes can be applied to a bunch of things
+
+			you can have multiple classes applied to something if you space them out
+
+		">
+			<div class="centerMiddle">
+				<pre style="font-size:130%;">&lt;p <div class="annotation up">attribute name</div><strong>id</strong>="<div class="annotation down">attribute name</div><strong style="background-color: PaleTurquoise">myFavoriteParagraph</strong>" <div class="annotation up">attribute name</div><strong>class</strong>="<div class="annotation down">attribute value</div><strong style="background-color: PaleTurquoise">brownText</strong>"&gt;my favorite text&lt;/p&gt;
+				</pre>
+			</div>
+		</div>
+
+		<!-- slide 10.2 -->
+		<div class="card build" notes="
+
+			given the id and classes, there&#39;s now a number of ways we can apply a style to our p tag
+
+			the thing outside of the braces is the selector. its how the css on the page finds what element
+			it should impact
+
+		">
+			<div class="centerMiddle">
+				<pre style="font-size:130%;">
+&lt;style&gt;
+   <strong> p </strong>{
+		font-family: Helvetica;
+	}
+	<strong>#myFavoriteParagraph</strong> {
+		font-weight: bold;
+		background: gold;
+	}
+	<strong>.brownText</strong> {
+		color: brown;
+	}
+&lt;/style&gt;
+				</pre>
+			</div>
+		</div>
+
+		<!-- slide 10.3 -->
+		<div class="card build" notes="
+
+			given the id and classes, there&#39;s now a number of ways we can apply a style to our p tag
+
+			the thing outside of the braces is the selector. its how the css on the page finds what element
+			it should impact
+
+		">
+			<div class="centerMiddle">
+				<div style="width:600px;text-align:left;margin:0 auto">
+				<p style="font-family: Helvetica;font-weight: bold;background: gold;color: brown;">
+					my favorite text</p>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- layout -->
+		<!-- slide 12 -->
+		<div class="card title" notes="">
+			<div class="centerMiddle">
+				<h2 class="box">
+					arrangement
+				</h2>
+			</div>
+		</div>
+
+		<!-- floats -->		
+		<!-- slide 13 -->
+		<div class="card title" notes="">
+			<div class="centerMiddle">
+				<h2 class="box">
+					layout : floats
+				</h2>
+			</div>
+		</div>
+
+		<!-- slide 14 -->
+		<div class="card" notes="">
+			<div class="centerMiddle">
+				<pre style="font-size:130%;">
+&lt;div&gt;
+	&lt;h1&gt;
+		this comes first
+	&lt;/h1&gt;
+	&lt;img src="images/cat.jpg"
+		alt="this will come second" &gt;
+	&lt;p&gt;
+		this will come third ...
+	&lt;/p&gt;
+	&lt;p&gt;
+		this will come last ...
+	&lt;/p&gt;
+&lt;/div&gt;
+				</pre>
+			</div>
+		</div>
+
+		<!-- slide 15 -->
+		<div class="card build" notes="">
+			<div class="centerMiddle">
+				
+				<div style="width:600px; margin: 0 auto; text-align: left">
+					<div>
+						<h1 style="font-size:130%;border:0;">
+							this comes first
+						</h1>
+						<img src="img/cat.jpg" alt="this will come second" style="width:200px;">
+						<p>
+							this will come third ... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus volutpat blandit mauris eget posuere. Aliquam arcu quam, maximus cursus dolor a, blandit aliquet ligula. 
+						</p>
+						<p>
+							this will come last ... Duis justo mauris, molestie a tincidunt id, lobortis in arcu. Donec imperdiet at velit aliquet faucibus. Proin quis neque sodales, hendrerit mi id, fringilla diam. Sed interdum sapien vitae tempor interdum.
+						</p>
+					</div>
+				</div>				
+			</div>
+		</div>
+
+		<!-- slide 15.1 -->
+		<div class="card build" notes="">
+			<div class="centerMiddle">	
+				<div style="width:600px; margin: 0 auto; text-align: left">
+					<div>
+						<h1 style="font-size:130%;border:0;background:cyan;">
+							this comes first
+						</h1>
+						<img src="img/cat.jpg" alt="this will come second" style="width:200px;">
+						<p style="background:pink;">
+							this will come third ... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus volutpat blandit mauris eget posuere. Aliquam arcu quam, maximus cursus dolor a, blandit aliquet ligula. 
+						</p>
+						<p style="background:pink;">
+							this will come last ... Duis justo mauris, molestie a tincidunt id, lobortis in arcu. Donec imperdiet at velit aliquet faucibus. Proin quis neque sodales, hendrerit mi id, fringilla diam. Sed interdum sapien vitae tempor interdum.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- slide 15.2 -->
+		<div class="card build" notes="">
+			<div class="centerMiddle">
+				<div style="width:600px; margin: 0 auto; text-align: left">
+					<div>
+						<h1 style="font-size:130%;border:0;background:cyan;">
+							this comes first
+						</h1>
+						<img src="img/cat.jpg" alt="this will come second" style="width:200px;float:left">
+						<p style="background:pink;">
+							this will come third ... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus volutpat blandit mauris eget posuere. Aliquam arcu quam, maximus cursus dolor a, blandit aliquet ligula. 
+						</p>
+						<p style="background:pink;">
+							this will come last ... Duis justo mauris, molestie a tincidunt id, lobortis in arcu. Donec imperdiet at velit aliquet faucibus. Proin quis neque sodales, hendrerit mi id, fringilla diam. Sed interdum sapien vitae tempor interdum.
+						</p>
+					</div>
+				</div>				
+			</div>
+		</div>
+
+		<!-- slide 15.3 -->
+		<div class="card build" notes="">
+			<div class="centerMiddle">
+				<pre style="font-size:130%;">
+&lt;div&gt;
+	&lt;h1&gt;
+		this comes first
+	&lt;/h1&gt;
+	&lt;<strong>img</strong> src="images/cat.jpg"
+		alt="this will come second"
+		style="<strong>float:left</strong>"&gt;
+	&lt;p&gt;
+		this will come third ...
+	&lt;/p&gt;
+	&lt;p&gt;
+		this will come last ...
+	&lt;/p&gt;
+&lt;/div&gt;
+				</pre>
+			</div>
+		</div>
+
+		<!-- slide 15.4 -->
+		<div class="card build" notes="">
+			<div class="centerMiddle">
+				<pre style="font-size:130%;">
+&lt;div&gt;
+	&lt;h1&gt;
+		this comes first
+	&lt;/h1&gt;
+	&lt;<strong>img</strong> src="images/cat.jpg"
+		alt="this will come second"
+		style="<strong>float:right</strong>"&gt;
+	&lt;p&gt;
+		this will come third ...
+	&lt;/p&gt;
+	&lt;p&gt;
+		this will come last ...
+	&lt;/p&gt;
+&lt;/div&gt;
+				</pre>
+			</div>
+		</div>
+
+		<!-- slide 15.5 -->
+		<div class="card build" notes="">
+			<div class="centerMiddle">
+				<div style="width:600px; margin: 0 auto; text-align: left">
+					<div>
+						<h1 style="font-size:130%;border:0;background:cyan;">
+							this comes first
+						</h1>
+						<img src="img/cat.jpg" alt="this will come second" style="width:200px;float:right">
+						<p style="background:pink;">
+							this will come third ... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus volutpat blandit mauris eget posuere. Aliquam arcu quam, maximus cursus dolor a, blandit aliquet ligula. 
+						</p>
+						<p style="background:pink;">
+							this will come last ... Duis justo mauris, molestie a tincidunt id, lobortis in arcu. Donec imperdiet at velit aliquet faucibus. Proin quis neque sodales, hendrerit mi id, fringilla diam. Sed interdum sapien vitae tempor interdum.
+						</p>
+					</div>
+				</div>			
+			</div>
+		</div>
+
+		<!-- slide 15.5 -->
+		<div class="card build" notes="">
+			<div class="centerMiddle">
+				<pre style="font-size:130%">  
+&lt;img src="1/cat.jpg" style="float:right"&gt;
++ <span style="background:lightgreen">&lt;img src="4/dog.jpg"&gt;</span>
+				</pre>
+				<div style="width:600px; margin: 0 auto; text-align: left">
+					<div>
+						<h1 style="font-size:130%;border:0;background:cyan;">
+							this comes first
+						</h1>
+						<img src="img/cat.jpg" alt="this will come second" style="width:200px;float:right;">
+						<img src="img/dog.jpg" alt="this will come second" style="width:200px;">
+						<p style="background:pink;">
+							this will come third ... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus volutpat blandit mauris eget posuere. Aliquam arcu quam, maximus cursus dolor a, blandit aliquet ligula. 
+						</p>
+						<p style="background:pink;">
+							this will come last ... Duis justo mauris, molestie a tincidunt id, lobortis in arcu. Donec imperdiet at velit aliquet faucibus. Proin quis neque sodales, hendrerit mi id, fringilla diam. Sed interdum sapien vitae tempor interdum.
+						</p>
+					</div>
+				</div>				
+			</div>
+		</div>
+
+		<!-- slide 15.6 -->
+		<div class="card build" notes="">
+			<div class="centerMiddle">
+				<pre style="font-size:130%">  
+&lt;img src="1/cat.jpg" style="float:right"&gt;
++ &lt;img src="4/dog.jpg  <span style="background:lightgreen">style="float:right</span>"&gt;
+				</pre>
+				<div style="width:600px; margin: 0 auto; text-align: left">
+					<div>
+						<h1 style="font-size:130%;border:0;background:cyan;">
+							this comes first
+						</h1>
+						<img src="img/cat.jpg" alt="this will come second" style="width:200px;float:right;">
+						<img src="img/dog.jpg" alt="this will come second" style="width:200px;float:right">
+						<p style="background:pink;">
+							this will come third ... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus volutpat blandit mauris eget posuere. Aliquam arcu quam, maximus cursus dolor a, blandit aliquet ligula. 
+						</p>
+						<p style="background:pink;">
+							this will come last ... Duis justo mauris, molestie a tincidunt id, lobortis in arcu. Donec imperdiet at velit aliquet faucibus. Proin quis neque sodales, hendrerit mi id, fringilla diam. Sed interdum sapien vitae tempor interdum.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- slide 15.7 -->
+		<div class="card build" notes="">
+			<div class="centerMiddle">
+				<pre style="font-size:130%">  
+&lt;img src="1/cat.jpg" style="float:right"&gt;
++ &lt;img src="4/dog.jpg  style="float:right;<span style="background:lightgreen">clear:right</span>"&gt;
+				</pre>
+				<div style="width:600px; margin: 0 auto; text-align: left">
+					<div>
+						<h1 style="font-size:130%;border:0;background:cyan;">
+							this comes first
+						</h1>
+						<img src="img/cat.jpg" alt="this will come second" style="width:200px;float:right;">
+						<img src="img/dog.jpg" alt="this will come second" style="width:200px;float:right;clear:right;">
+						<p style="background:pink;">
+							this will come third ... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus volutpat blandit mauris eget posuere. Aliquam arcu quam, maximus cursus dolor a, blandit aliquet ligula. 
+						</p>
+						<p style="background:pink;">
+							this will come last ... Duis justo mauris, molestie a tincidunt id, lobortis in arcu. Donec imperdiet at velit aliquet faucibus. Proin quis neque sodales, hendrerit mi id, fringilla diam. Sed interdum sapien vitae tempor interdum.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- slide 15.8 -->
+		<div class="card build" notes="">
+			<div class="centerMiddle">
+				<pre style="font-size:130%">
+&lt;img src="1/cat.jpg" style="float:<span style="background:lightgreen">left</span>"&gt;
+&lt;img src="4/dog.jpg  style="float:<span style="background:lightgreen">left</span>; clear: <span style="background:lightgreen">right</span>"&gt;
+				</pre>
+				<div style="width:600px; margin: 0 auto; text-align: left">
+					<div>
+						<h1 style="font-size:130%;border:0;background:cyan;">
+							this comes first
+						</h1>
+						<img src="img/cat.jpg" alt="this will come second" style="width:200px;float:left;">
+						<img src="img/dog.jpg" alt="this will come second" style="width:200px;float:left;clear:right;">
+						<p style="background:pink;">
+							this will come third ... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus volutpat blandit mauris eget posuere. Aliquam arcu quam, maximus cursus dolor a, blandit aliquet ligula. 
+						</p>
+						<p style="background:pink;">
+							this will come last ... Duis justo mauris, molestie a tincidunt id, lobortis in arcu. Donec imperdiet at velit aliquet faucibus. Proin quis neque sodales, hendrerit mi id, fringilla diam. Sed interdum sapien vitae tempor interdum.
+						</p>
+					</div>
+				</div>				
+			</div>
+		</div>
+
+		<!-- slide 15.9 -->
+		<div class="card build" notes="">
+			<div class="centerMiddle">
+				<pre style="font-size:130%">
+&lt;img src="1/cat.jpg" style="float:<span style="background:lightgreen">left</span>"&gt;
+&lt;img src="4/dog.jpg  style="float:<span style="background:lightgreen">left</span>;clear:<span style="background:pink">right</span>"&gt;
+				</pre>
+				<div style="width:600px; margin: 0 auto; text-align: left">
+				<div>
+					<h1 style="font-size:130%;border:0;background:cyan;">
+						this comes first
+					</h1>
+					<img src="img/cat.jpg" alt="this will come second" style="width:200px;float:left;">
+					<img src="img/dog.jpg" alt="this will come second" style="width:200px;float:left;clear:right;">
+					<p style="background:pink;">
+						this will come third ... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus volutpat blandit mauris eget posuere. Aliquam arcu quam, maximus cursus dolor a, blandit aliquet ligula. 
+					</p>
+					<p style="background:pink;">
+						this will come last ... Duis justo mauris, molestie a tincidunt id, lobortis in arcu. Donec imperdiet at velit aliquet faucibus. Proin quis neque sodales, hendrerit mi id, fringilla diam. Sed interdum sapien vitae tempor interdum.
+					</p>
+				</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- slide 15.10 -->
+		<div class="card build" notes="">
+			<div class="centerMiddle">
+				<pre style="font-size:130%">  &lt;img src="1/cat.jpg" style="float:<span style="background:lightgreen">left</span>"&gt;
+  &lt;img src="4/dog.jpg  style="float:<span style="background:lightgreen">left</span>;clear:<span style="background:lightgreen">left</span>"&gt;
+				</pre>
+				<div style="width:600px; margin: 0 auto; text-align: left">
+					<div>
+						<h1 style="font-size:130%;border:0;background:cyan;">
+							this comes first
+						</h1>
+						<img src="img/cat.jpg" alt="this will come second" style="width:200px;float:left;">
+						<img src="img/dog.jpg" alt="this will come second" style="width:200px;float:left;clear:left;">
+						<p style="background:pink;">
+							this will come third ... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus volutpat blandit mauris eget posuere. Aliquam arcu quam, maximus cursus dolor a, blandit aliquet ligula. 
+						</p>
+						<p style="background:pink;">
+							this will come last ... Duis justo mauris, molestie a tincidunt id, lobortis in arcu. Donec imperdiet at velit aliquet faucibus. Proin quis neque sodales, hendrerit mi id, fringilla diam. Sed interdum sapien vitae tempor interdum.
+						</p>
+					</div>
+				</div>				
+			</div>
+		</div>
+
+
+		<!-- slide 15.11 -->
+		<div class="card build" notes="">
+			<div class="centerMiddle">
+				<pre style="font-size:130%;">
+&lt;div&gt;
+	&lt;h1&gt;
+		this comes first
+	&lt;/h1&gt;
+	&lt;img src="images/cat.jpg"
+		alt="this will come second"
+		style="float:left"&gt;
+	&lt;img src="images/dog.jpg"
+		alt="a dog interrupts"
+		style="float:left; clear:left"&gt;
+	&lt;p&gt;
+		this will come third ...
+	&lt;/p&gt;
+	&lt;p&gt;
+		this will come last ...
+	&lt;/p&gt;
+&lt;/div&gt;
+				</pre>
+			</div>
+		</div>
+
+
+		<!-- slide 15.12 -->
+		<div class="card build" notes="">
+			<div class="centerMiddle">
+				<div style="width:600px; margin: 0 auto; text-align: left">
+					<div>
+						<h1 style="font-size:130%;border:0;background:cyan;">
+							this comes first
+						</h1>
+						<img src="img/cat.jpg" alt="this will come second" style="width:200px;float:left;margin:0 20px 20px 0;">
+						<img src="img/dog.jpg" alt="this will come second" style="width:200px;float:left;clear:left;margin:0 20px 0 0;">
+						<p style="background:pink;">
+							this will come third ... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus volutpat blandit mauris eget posuere. Aliquam arcu quam, maximus cursus dolor a, blandit aliquet ligula. 
+						</p>
+						<p style="background:pink;">
+							this will come last ... Duis justo mauris, molestie a tincidunt id, lobortis in arcu. Donec imperdiet at velit aliquet faucibus. Proin quis neque sodales, hendrerit mi id, fringilla diam. Sed interdum sapien vitae tempor interdum.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- absolute positioning -->
+		<!-- slide 17 -->
+		<div class="card title" notes="">
+			<div class="centerMiddle">
+				<h2 class="box">
+					layout : absolute
+				</h2>
+			</div>
+		</div>
+
+		<div class="card" notes="">
+			<div class="centerMiddle">
+				<pre style="font-size:130%;">
+&lt;div id="container"&gt;
+	&lt;div class="top"&gt;
+		this sticks to the top
+	&lt;/div&gt;
+	&lt;img src="images/cat.jpg"
+		alt="this will go to the right"
+		class="right"&gt;
+&lt;/div&gt;
+				</pre>
+			</div>
+		</div>
+
+		<!-- slide 18 -->
+		<div class="card build" notes="">
+			<div class="centerMiddle">
+				
+				<div style="min-width:600px; width: 80vw; height: 80vh; min-height: 400px; margin: 0 auto; text-align: left; border: 1px solid red;">
+					<div>
+						<div>
+							this sticks to the top
+						</div>
+						<img src="img/cat.jpg" alt="this will go to the right" style="width:200px;">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="card build" notes="">
+			<div class="centerMiddle">
+				<pre style="font-size:130%;">
+#container {
+	border: 1px solid red;
+	<strong>position: relative;</strong>
+}
+
+.top {
+	position: absolute;
+	<strong>top: 0px;</strong>
+}
+
+.right {
+	position: absolute;
+	<strong>right: 0px;</strong>
+}
+				</pre>
+			</div>
+		</div>
+
+		<!-- slide 19 -->
+		<div class="card build" notes="">
+			<div class="centerMiddle">
+				
+				<div style="min-width:600px; width: 80vw; height: 80vh; min-height: 400px; margin: 0 auto; text-align: left; border: 1px solid red; position: relative;">
+					<div>
+						<div class="top">
+							this sticks to the top
+						</div>
+						<img class="right" src="img/cat.jpg" alt="this will go to the right" style="width:200px;">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- slide 20 -->
+		<div class="card" notes="">
+			<div class="centerMiddle">
+				<pre style="font-size:130%;">
+&lt;div id="container"&gt;
+	&lt;div class="top"&gt;
+		this sticks to the top
+	&lt;/div&gt;
+	&lt;img src="images/cat.jpg"
+		alt="this will go to the bottom right"
+		class="right <strong>bottom</strong>"&gt;
+&lt;/div&gt;
+				</pre>
+			</div>
+		</div>		
+
+		<!-- slide 20.1 -->
+		<div class="card build" notes="">
+			<div class="centerMiddle">
+				<pre style="font-size:130%;">
+#container {
+	border: 1px solid red;
+	position: relative;
+}
+
+.top {
+	position: absolute;
+	top: 0px;
+}
+
+.right {
+	position: absolute;
+	right: 0px;
+}
+
+.bottom {
+	position: absolute;
+	<strong>bottom: 0px;</strong>
+}
+
+				</pre>
+			</div>
+		</div>
+
+		<!-- slide 20.2 -->
+		<div class="card build" notes="">
+			<div class="centerMiddle">
+				
+				<div style="min-width:600px; width: 80vw; height: 80vh; min-height: 400px; margin: 0 auto; text-align: left; border: 1px solid red; position: relative;">
+					<div>
+						<div class="top">
+							this sticks to the top
+						</div>
+						<img class="right bottom" src="img/cat.jpg" alt="this will go to the bottom right" style="width:200px;">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- grid -->
+		<!-- slide 21 -->
+		<div class="card title" notes="">
+			<div class="centerMiddle">
+				<h2 class="box">
+					layout : grid
+				</h2>
+			</div>
+		</div>
+
+		<!-- slide 22 -->
+		<div class="card" notes="">
+			<div class="centerMiddle">
+				<pre style="font-size:130%;">
+&lt;div <strong>id="myGrid"</strong>&gt;
+	&lt;h1&gt;
+		this comes first
+	&lt;/h1&gt;
+	&lt;img src="images/cat.jpg"
+		alt="this will come second" &gt;
+	&lt;div class="content" &gt;	
+		&lt;p&gt;
+			this will come third ...
+		&lt;/p&gt;
+		&lt;p&gt;
+			this will come last ...
+		&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+				</pre>
+			</div>
+		</div>
+
+		<!-- slide 22.1 -->
+		<div class="card build" notes="">
+			<div class="centerMiddle">
+				<div style="width:600px; margin: 0 auto; text-align: left">
+					<div>
+						<h1 style="font-size:130%;border:0;">
+							this comes first
+						</h1>
+						<img src="img/cat.jpg" alt="this will come second" style="width:200px;">
+						<p>
+							this will come third ... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus volutpat blandit mauris eget posuere. Aliquam arcu quam, maximus cursus dolor a, blandit aliquet ligula. 
+						</p>
+						<p>
+							this will come last ... Duis justo mauris, molestie a tincidunt id, lobortis in arcu. Donec imperdiet at velit aliquet faucibus. Proin quis neque sodales, hendrerit mi id, fringilla diam. Sed interdum sapien vitae tempor interdum.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- slide 23 -->
+		<div class="card" notes="
+
+grid is another display type, like inline or block. 
+
+in this case, it sets the element to contain a grid of items
+
+		">
+			<div class="centerMiddle">
+				<pre style="font-size:130%;">
+#myGrid {
+	<strong>display: grid;</strong>
+}
+				</pre>
+			</div>
+		</div>
+
+		<!-- slide 23.1 -->
+		<div class="card build" notes="
+
+you can then define a template of where columns and rows will go.
+
+in this case, each column is separated by a space
+
+		">
+			<div class="centerMiddle">
+				<pre style="font-size:130%;">
+#myGrid {
+	display: grid;
+	<strong>grid-template-columns: 100px 1fr 1fr;</strong>
+}
+				</pre>
+			</div>
+		</div>
+
+		<!-- slide 23.2 -->
+		<div class="card build" notes="
+
+the 'fr' unit of measurement refers to a fractional unit
+
+so, here we're saying – make the first column 100px
+
+then the next two 1fr of the remaining space in the grid
+
+		">
+			<div class="centerMiddle">
+				<pre style="font-size:130%;">
+#myGrid {
+	display: grid;
+	grid-template-columns: 100px <strong>1fr 1fr</strong>;
+}
+				</pre>
+			</div>
+		</div>
+
+		<!-- slide 23.3 -->
+		<div class="card build" notes="">
+			<div class="centerMiddle">
+				<div style="width:600px ;margin:0 auto; text-align: left; font-family: 'Everson';">
+						<div style="background:pink;height:323px;border:1px dashed deeppink;position:relative;position: relative;">
+							<div style="height: 100%;width:1px;background:white;position:absolute;left:100px;"></div>
+							<div style="position:absolute;left:0;right:500px;top:-35px;text-align: center;">100px</div>
+							<div style="position:absolute;left:100px;right:0;top:-35px;text-align: center;">the rest</div>
+						</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- slide 23.4 -->
+		<div class="card build" notes="
+
+so the first column will be 100px
+
+		">
+			<div class="centerMiddle">
+				<div style="width:600px ;margin:0 auto; text-align: left; font-family: 'Everson'">
+					<div style="background:pink;height:323px;border:1px dashed deeppink;position:relative;position: relative;">
+						<div style="height: 100%;width:1px;background:white;position:absolute;left:100px;"></div>
+						<div style="position:absolute;left:0;right:500px;top:-35px;text-align: center;">100px</div>
+						<div style="position:absolute;left:100px;right:0;top:-35px;text-align: center;">1fr + 1fr = 2fr</div>
+					</div>	
+				</div>
+			</div>
+		</div>
+
+		<!-- slide 23.5 -->
+		<div class="card build" notes="
+
+then the rest will be divided into 2fr
+
+		">
+			<div class="centerMiddle">
+				<div style="width:600px ;margin:0 auto; text-align: left; font-family: 'Everson'">
+					<div style="background:pink;height:323px;border:1px dashed deeppink;position:relative;position: relative;">
+						<div style="height: 100%;width:1px;background:white;position:absolute;left:100px;"></div>
+						<div style="height: 100%;width:1px;background:white;position:absolute;left:350px;"></div>
+						<div style="position:absolute;left:0;right:500px;top:-35px;text-align: center;">100px</div>
+						<div style="position:absolute;left:350px;right:0;top:-35px;text-align: center;">1fr</div>
+						<div style="position:absolute;left:100px;right:250px;top:-35px;text-align: center;">1fr</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- slide 23.6 -->
+		<div class="card build" notes="
+
+this same method can also be applied to rows, using 'grid-template-rows'
+
+		">
+			<div class="centerMiddle">
+				<pre style="font-size:130%;">
+#myGrid {
+	display: grid;
+	grid-template-columns: 100px 1fr 1fr;
+	<strong>grid-template-rows: 50px 1fr;</strong>
+}
+			</pre>
+			</div>
+		</div>
+
+		<!-- slide 23.7 -->
+		<div class="card build" notes="">
+			<div class="centerMiddle">
+				<div style="width:600px ;margin:0 auto; text-align: left; font-family: 'Everson'">
+					<div style="background:pink;height:323px;border:1px dashed deeppink;position:relative;position: relative;">
+						<div style="height: 100%;width:1px;background:white;position:absolute;left:100px;"></div>
+						<div style="height: 100%;width:1px;background:white;position:absolute;left:350px;"></div>
+						<div style="width:100%;height:1px;background:white;position:absolute;top:50px;"></div>
+						<div style="position:absolute;left:-50px;top:17px;text-align: right;">50px</div>
+						<div style="position:absolute;left:-50px;top:170px;text-align: right;">1fr</div>
+						<div style="position:absolute;left:0;right:500px;top:-35px;text-align: center;">100px</div>
+						<div style="position:absolute;left:350px;right:0;top:-35px;text-align: center;">1fr</div>
+						<div style="position:absolute;left:100px;right:250px;top:-35px;text-align: center;">1fr</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- slide 23.8 -->
+		<div class="card build" notes="">
+			<div class="centerMiddle">
+				<pre style="font-size:130%;">
+#myGrid {
+	display: grid;
+	grid-template-columns: 100px 1fr 1fr;
+	grid-template-rows: 50px 1fr;
+	<strong>grid-template-areas:</strong>
+    	<strong>".   header ."</strong>
+    	<strong>"cat main   main"</strong>;
+}
+				</pre>
+			</div>
+		</div>
+
+		<!-- slide 23.9 -->
+		<div class="card build" notes="">
+			<div class="centerMiddle">
+				<div style="width:600px ;margin:0 auto; text-align: left; font-family: 'Everson'">
+					<div style="background:pink;height:323px;border:1px dashed deeppink;position:relative;position: relative;">
+						<div style="height: 100%;width:1px;background:white;position:absolute;left:100px;"></div>
+						<div style="height: 100%;width:1px;background:white;position:absolute;left:350px;"></div>
+						<div style="width:100%;height:1px;background:white;position:absolute;top:50px;"></div>
+						<div style="position:absolute;left:-50px;top:17px;text-align: right;">50px</div>
+						<div style="position:absolute;left:-50px;top:170px;text-align: right;">1fr</div>
+						<div style="position:absolute;left:0;right:500px;top:-35px;text-align: center;">100px</div>
+						<div style="position:absolute;left:350px;right:0;top:-35px;text-align: center;">1fr</div>
+						<div style="position:absolute;left:100px;right:250px;top:-35px;text-align: center;">1fr</div>
+						<div style="position:absolute;left:0;right:500px;top:170px;text-align: center;">cat</div>
+						<div style="position:absolute;left:100px;right:250px;top:17px;text-align: center;">header</div>
+						<div style="position:absolute;left:100px;right:250px;top:170px;text-align: center;">main</div>
+						<div style="position:absolute;left:350px;right:0;top:170px;text-align: center;">main</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- slide 24 -->
+		<div class="card" notes="">
+			<div class="centerMiddle">
+				<pre style="font-size:130%;">
+&lt;div id="myGrid"&gt;
+	&lt;<strong>h1</strong>&gt;
+		this comes first
+	&lt;/h1&gt;
+	&lt;<strong>img</strong> src="images/cat.jpg"
+		alt="this will come second" &gt;
+	&lt;div <strong>class="content"</strong> &gt;	
+		&lt;p&gt;
+			this will come third ...
+		&lt;/p&gt;
+		&lt;p&gt;
+			this will come last ...
+		&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+				</pre>
+			</div>
+		</div>
+
+		<!-- slide 24.1 -->
+		<div class="card build" notes="">
+			<div class="centerMiddle">
+				<pre style="font-size:130%;">
+.content {
+	grid-area:main;
+}
+
+h1 {
+	grid-area:header;
+}
+
+img {
+	grid-area:cat;
+}
+				</pre>
+			</div>
+		</div>
+
+		<!-- slide 24.2 -->
+		<div class="card build" notes="">
+			<div class="centerMiddle">	
+				<div style="width:600px; margin: 0 auto; text-align: left">
+					<div style="display: grid;grid-template-columns: 100px 1fr 1fr;grid-template-rows: 50px 1fr;grid-template-areas: &#39;.   header .&#39; &#39;cat main   main&#39;;">
+						<h1 style="font-size:130%; border:0;grid-area:header;">
+							this comes first
+						</h1>
+						<img style="grid-area:cat;width:100%;" src="img/cat.jpg" alt="this will come second">
+						<div style="grid-area:main">
+							<p>
+								this will come third ... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus volutpat blandit mauris eget posuere. Aliquam arcu quam, maximus cursus dolor a, blandit aliquet ligula. 
+							</p>
+							<p>
+								this will come last ... Duis justo mauris, molestie a tincidunt id, lobortis in arcu. Donec imperdiet at velit aliquet faucibus. Proin quis neque sodales, hendrerit mi id, fringilla diam. Sed interdum sapien vitae tempor interdum.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- slide 24.3 -->
+		<div class="card build" notes="">
+			<div class="centerMiddle">
+				<div style="width:600px; margin: 0 auto; text-align: left">
+					<div style="display: grid;grid-template-columns: 100px 1fr 1fr;grid-template-rows: 50px 1fr;grid-template-areas: &#39;.   header .&#39; &#39;cat main   main&#39;;">
+						<h1 style="font-size:130%;border:0;grid-area:header;">
+							this comes first
+						</h1>
+						<img style="grid-area:cat;width:100%;" src="img/cat.jpg" alt="this will come second">
+						<div style="grid-area:main;">
+							<p>
+								this will come third ... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus volutpat blandit mauris eget posuere. Aliquam arcu quam, maximus cursus dolor a, blandit aliquet ligula. 
+							</p>
+							<p>
+								this will come last ... Duis justo mauris, molestie a tincidunt id, lobortis in arcu. Donec imperdiet at velit aliquet faucibus. Proin quis neque sodales, hendrerit mi id, fringilla diam. Sed interdum sapien vitae tempor interdum.
+							</p>
+						</div>
+						<div style="grid-column-start: 1;grid-column-end: 2;grid-row-start: 1;grid-row-end: 3;border-right:2px solid hotpink;"></div>
+						<div style="grid-column-start: 2;grid-column-end: 3;grid-row-start: 1;grid-row-end: 3;border-right:2px solid hotpink;"></div>
+						<div style="grid-column-start: 1;grid-column-end: 4;grid-row-start: 1;grid-row-end: 2;border-bottom:2px solid hotpink;"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- slide 24.4 -->
+		<div class="card build" notes="">
+			<div class="centerMiddle">		
+				<div style="width:600px; margin: 0 auto; text-align: left">
+					<div style="display: grid;grid-template-columns: 100px 1fr 1fr;grid-template-rows: 50px 1fr;grid-template-areas: &#39;.   header .&#39; &#39;cat main   main&#39;;">
+						<h1 style="font-size:130%;border:0;grid-area:header;">
+							this comes first
+						</h1>
+						<img style="grid-area:cat;width:100%;" src="img/cat.jpg" alt="this will come second">
+						<div style="grid-area:main;">
+							<p>
+								this will come third ... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus volutpat blandit mauris eget posuere. Aliquam arcu quam, maximus cursus dolor a, blandit aliquet ligula. 
+							</p>
+							<p>
+								this will come last ... Duis justo mauris, molestie a tincidunt id, lobortis in arcu. Donec imperdiet at velit aliquet faucibus. Proin quis neque sodales, hendrerit mi id, fringilla diam. Sed interdum sapien vitae tempor interdum.
+							</p>
+						</div>
+						<div style="text-align:center;grid-area:header;position:relative;background: rgba(235,100,167,0.25)"><pre style="background:hotpink;position:relative;top:calc(50% - 8px);">header</pre></div>
+						<div style="text-align:center;grid-area:cat;position:relative;background: rgba(44,249,249,0.25)"><pre style="background:cyan;position:relative;top:calc(50% - 8px);">cat</pre></div>
+						<div style="text-align:center;grid-area:main;position:relative;background: rgba(143,230,144,0.25)"><pre style="background:lightgreen;position:relative;top:calc(50% - 8px);position: relative; z-index: 100001">main</pre></div>
+						<div style="grid-column-start: 1;grid-column-end: 2;grid-row-start: 1;grid-row-end: 3;border-right:2px solid hotpink;position: relative; z-index: 100000"></div>
+						<div style="grid-column-start: 1;grid-column-end: 4;grid-row-start: 1;grid-row-end: 2;border-bottom:2px solid hotpink;position: relative; z-index: 100000"></div>
+						<div style="grid-column-start: 2;grid-column-end: 3;grid-row-start: 1;grid-row-end: 3;border-right:2px solid hotpink;position: relative; z-index: 100000"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- slide 24.5 -->
+		<div class="card build" notes="">
+			<div class="centerMiddle">				
+				<div style="width:600px; margin: 0 auto; text-align: left;position:relative;border:2px solid hotpink;">
+					<div style="position:absolute;left:-50px;top:17px;text-align: right;font-family: 'Everson'">50px</div>
+					<div style="position:absolute;left:-50px;top:170px;text-align: right;font-family: 'Everson'">1fr</div>
+					<div style="position:absolute;left:0;right:500px;top:-35px;text-align: center;font-family: 'Everson'">100px</div>
+					<div style="position:absolute;left:350px;right:0;top:-35px;text-align: center;font-family: 'Everson'">1fr</div>
+					<div style="position:absolute;left:100px;right:250px;top:-35px;text-align: center;font-family: 'Everson'">1fr</div>
+					<div style="display: grid;grid-template-columns: 100px 1fr 1fr;grid-template-rows: 50px 1fr;grid-template-areas: &#39;.   header .&#39; &#39;cat main   main&#39;;">
+						<h1 style="font-size:130%;border:0;grid-area:header;">
+							this comes first
+						</h1>
+						<img style="grid-area:cat;width:100%;" src="img/cat.jpg" alt="this will come second">
+						<div style="grid-area:main;">
+							<p>
+								this will come third ... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus volutpat blandit mauris eget posuere. Aliquam arcu quam, maximus cursus dolor a, blandit aliquet ligula. 
+							</p>
+							<p>
+								this will come last ... Duis justo mauris, molestie a tincidunt id, lobortis in arcu. Donec imperdiet at velit aliquet faucibus. Proin quis neque sodales, hendrerit mi id, fringilla diam. Sed interdum sapien vitae tempor interdum.
+							</p>
+						</div>
+						
+						<div style="text-align:center;grid-area:header;position:relative;background: rgba(235,100,167,0.25)"><pre style="background:hotpink;position:relative;top:calc(50% - 8px);">header</pre></div>
+						<div style="text-align:center;grid-area:cat;position:relative;background: rgba(44,249,249,0.25)"><pre style="background:cyan;position:relative;top:calc(50% - 8px);">cat</pre></div>
+						<div style="text-align:center;grid-area:main;position:relative;background: rgba(143,230,144,0.25)"><pre style="background:lightgreen;position:relative;top:calc(50% - 8px);position: relative; z-index: 100001">main</pre></div>
+						<div style="grid-column-start: 1;grid-column-end: 2;grid-row-start: 1;grid-row-end: 3;border-right:2px solid hotpink;position: relative; z-index: 100000"></div>
+						<div style="grid-column-start: 1;grid-column-end: 4;grid-row-start: 1;grid-row-end: 2;border-bottom:2px solid hotpink;position: relative; z-index: 100000"></div>
+						<div style="grid-column-start: 2;grid-column-end: 3;grid-row-start: 1;grid-row-end: 3;border-right:2px solid hotpink;position: relative; z-index: 100000"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- slide 24.6 -->
+		<div class="card build" notes="">
+			<div class="centerMiddle">
+				<pre style="font-size:130%;">
+#myGrid {
+	...
+	<strong>grid-column-gap: 20px;</strong>
+	<strong>grid-row-gap: 20px;</strong>
+}
+				</pre>
+			</div>
+		</div>
+
+		<!-- slide 24.6 -->
+		<div class="card build" notes="">
+			<div class="centerMiddle">
+				
+				<div style="width:600px; margin: 0 auto; text-align: left">
+				<div style="display: grid;grid-template-columns: 100px 1fr 1fr;grid-template-rows: 50px 1fr;grid-column-gap: 20px;grid-row-gap: 20px;grid-template-areas: &#39;.   header .&#39; &#39;cat main   main&#39;;">
+					<h1 style="font-size:130%;border:0;grid-area:header;">
+						this comes first
+					</h1>
+					<img style="grid-area:cat;width:100%;" src="img/cat.jpg" alt="this will come second">
+					<div style="grid-area:main">
+						<p>
+							this will come third ... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus volutpat blandit mauris eget posuere. Aliquam arcu quam, maximus cursus dolor a, blandit aliquet ligula. 
+						</p>
+						<p>
+							this will come last ... Duis justo mauris, molestie a tincidunt id, lobortis in arcu. Donec imperdiet at velit aliquet faucibus. Proin quis neque sodales, hendrerit mi id, fringilla diam. Sed interdum sapien vitae tempor interdum.
+						</p>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="card title" notes="
+
+		lets play with some of these in glitch
+
+		">
+			<div class="centerMiddle">
+				<h2 class="box"><a href="https://glitch.com/edit/#!/join/b556d6b8-0f62-4fe9-bcd3-9c3b6476b7fd" target="_blank">CSS Shapes</a></h2>
+			</div>
+		</div>
+	<script type="text/javascript" src="../assets/global.js"></script>
+</body>
+</html>

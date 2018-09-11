@@ -1,0 +1,36 @@
+/* web fonts */
+@font-face {
+  font-family: 'Everson';
+  src: url('Everson-Mono.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  text-rendering: optimizeLegibility; 
+  -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+  font-family: 'Everson';
+  src: url('Everson-Mono-Oblique.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  text-rendering: optimizeLegibility; 
+  -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+  font-family: 'Everson';
+  src: url('Everson-Mono-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  text-rendering: optimizeLegibility; 
+  -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+  font-family: 'Everson';
+  src: url('Everson-Mono-Bold-Oblique.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  text-rendering: optimizeLegibility; 
+  -webkit-font-smoothing: antialiased;
+}
