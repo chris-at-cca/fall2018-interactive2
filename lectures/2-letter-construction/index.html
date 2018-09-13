@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- adapted from lectures by Will Ruby http://fall2018.will.graphics/ -->
+		<meta charset="utf-8">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name = "viewport" content = "width = device-width,initial-scale = 1, user-scalable = no">
+		<link rel="icon" type="image/png" href="favicon.png">
+		<title>html and css</title>
+		<link rel="stylesheet" type="text/css" href="../assets/fonts.css">
+		<link rel="stylesheet" type="text/css" href="../assets/style.css">
+		<style>
+			:root {
+			  --fontHeight: 200px;
+			  --color: black;
+			  --negativeColor: white;
+			  --baseKern: 20px;
+			  --stemWidth: 20px;
+			}
+
+			.card {
+				position: relative;
+			}
+
+			.letter {
+			  height:calc(var(--fontHeight) + 20px);
+			  position: relative;
+			  transform: translateX(calc(50vw - 60px));
+			}
+			.letter * {
+			  position:absolute;
+			}
+
+
+			/* define some letter parts */
+
+			.stem {
+			  background: var(--color);
+			  width:var(--stemWidth); 
+			  height: var(--fontHeight);
+			}
+
+			.leftLeaning {
+			  transform:rotate(-20deg) 
+			}
+
+			.rightLeaning {
+			  transform:rotate(20deg) 
+			}
+
+			.crossBar {
+			  background: var(--color);  
+			  height: var(--stemWidth); 
+			}
+
+			.counter {
+			  transform-origin: center;
+			  background: var(--negativeColor);    
+			}
+
+
+			/* setup so our letters to have equal spacing */
+			.rootLetter {
+			  float:left;
+			  position:relative; 
+			  padding-right:var(--baseKern); 
+			}
+
+			.letter {
+			  height:calc(var(--fontHeight) + 20px);
+			}
+
+			.letter * {
+			  position:absolute;
+			  /*border: 1px solid yellow;*/
+			}
+
+			/* positioning parts of letters */
+
+			/* A */
+			.a {
+			  width:170px;
+			}
+			.a>.one {
+			  left:40px;  
+			}
+			.a>.two {
+			  left:110px;  
+			}
+			.a>.three {
+			  left: 40px;
+			  top: 110px;
+			  width: 80px;
+			}
+			.a>.four {
+			  top:-8px; 
+			  width:170px;
+			}
+			.a>.five {
+			  bottom:14px;
+			  width:170px;
+			}
+			.a>.counter {
+			  height: 20px;
+			  background: var(--negativeColor);
+			}
+			
+
+		</style>
+	</head>
+	<body>
+
+	<div class="card title" notes="">
+		<div class="centerMiddle">
+			<h2 class="box">
+				Letterform Construction
+			</h2>
+		</div>
+	</div>
+
+
+<div class="card" notes="
+
+			for our css typefaces, we'll be using block level html elements as shapes to draw in the browser window
+
+		">
+			<div class="centerMiddle">
+				<pre style="font-size:120%;">
+in this example, we'll use the <strong>div's</strong> and some specific
+CSS styles heavily, including but not limited to:
+
+... {
+	width: 100px;
+	height: 10px;
+	background: red;
+	transform: rotate(10deg) translate(0, 10px) scale(-1);
+	position: [absolute, relative];
+	[top, left, bottom, right]: 10px;
+}
+				</pre>
+			</div>
+		</div>
+
+
+<div class="card" notes="
+
+			CSS variables allow you to set a value that is constantly referenced in CSS
+
+		">
+			<div class="centerMiddle">
+				<pre style="font-size:120%;">
+you can also use <strong>CSS Variables</strong> to make it easier
+to keep parts of your typeface consistent. to use
+<strong>CSS Variables</strong>, you define a value for them either
+on html or the <strong>:root</strong> node in your stylesheet , like:
+
+:root {
+	--fontHeight: 200px;
+	--color: white;
+	--negativeColor: black;
+	--baseKern: 20px;
+	--stemWidth: 20px;
+}
+				</pre>
+			</div>
+		</div>
+
+<div class="card build" notes="
+
+			CSS variables allow you to set a value that is constantly referenced in CSS
+
+		">
+			<div class="centerMiddle">
+				<pre style="font-size:120%;">
+you can also use CSS Variables to make it easier
+to keep parts of your typeface consistent. to use
+CSS Variables, you define a value for them either
+on html or the :root node in your stylesheet , like:
+
+:root {
+	<strong>--fontHeight: 200px;</strong>
+	<strong>--color: white;</strong>
+	--negativeColor: black;
+	--baseKern: 20px;
+	<strong>--stemWidth: 20px;</strong>
+}
+				</pre>
+			</div>
+		</div>		
+
+
+		<div class="card" notes="
+
+			you can then call these variables, by inserting the value as:
+			var(--'variable name')
+
+		">
+			<div class="centerMiddle">
+				<pre style="font-size:120%;">
+later you can then use those values in place of numbers
+in your stylesheet
+
+.stem {
+	background: var(<strong>--color</strong>);
+	width: var(<strong>--stemWidth</strong>); 
+	height: var(<strong>--fontHeight</strong>);
+}
+				</pre>
+			</div>
+		</div>
+
+		<div class="card build" notes="
+
+			you can use these in place of colors or numbers
+
+		">
+			<div class="centerMiddle">
+				<pre style="font-size:120%;">
+later you can then use those values in place of numbers
+in your stylesheet
+
+.stem {
+	background: <strong>var(</strong>--color<strong>)</strong>;
+	width: <strong>var(</strong>--stemWidth<strong>)</strong>; 
+	height: <strong>var(</strong>--fontHeight<strong>)</strong>;
+}
+				</pre>
+			</div>
+		</div>
+
+		<div class="card" notes="
+
+			last class we talked about ids and classes, and how classes are something reusable throughout the doc
+			so, it may be no surprise, that we'll be using classes to manipulate common aspects of our letterforms
+
+		">
+			<div class="centerMiddle">
+				<pre style="font-size:120%;">
+we'll also want to think about how to use CSS classes
+to make reusable modules
+				</pre>
+			</div>
+		</div>
+
+
+<div class="card">
+	<div class="centerMiddle">
+		<div class="a letter">
+        
+        <!-- stem -->
+        <div class="stem rightLeaning one"></div>
+        <div class="stem leftLeaning two"></div>
+        
+        <!-- crossbar -->
+        <div class="crossBar three"></div>
+
+        <!-- flat-ends -->
+        <div class="counter four"></div>
+        <div class="counter five"></div>
+
+      </div>  
+	</div>
+</div>
+
+<div class="card build" notes="
+
+			we used it like this already. the content of the style tag are css properties
+
+		">
+			<div class="centerMiddle">
+				<pre style="font-size:120%;">
+&lt;div class="a letter"&gt;
+	&lt;div class="stem rightLeaning one"&gt;&lt;/div&gt;
+	&lt;div class="stem leftLeaning two"&gt;&lt;/div&gt;
+	&lt;div class="crossBar three"&gt;&lt;/div&gt;
+	&lt;div class="counter four"&gt;&lt;/div&gt;
+	&lt;div class="counter five"&gt;&lt;/div&gt;
+&lt;/div&gt;
+				</pre>
+			</div>
+		</div>
+
+
+<div class="card build" notes="
+
+			we used it like this already. the content of the style tag are css properties
+
+		">
+			<div class="centerMiddle">
+				<pre style="font-size:120%;">
+.letter {
+	float:left;
+	position:relative; 
+	padding-right:var(--baseKern); 
+	height:calc(var(--fontHeight) + 20px);
+}
+.letter * {
+	position:absolute;
+}
+</pre></div></div>
+
+
+<div class="card build" notes="
+
+			we used it like this already. the content of the style tag are css properties
+
+		">
+			<div class="centerMiddle">
+				<pre style="font-size:120%;">
+.letter {
+	float:left;
+	position:relative; 
+	padding-right:var(--baseKern); 
+	height:<strong>calc(</strong>var(--fontHeight) + 20px<strong>)</strong>;
+}
+.letter * {
+	position:absolute;
+}
+</pre></div></div>
+
+
+
+<div class="card build" notes="
+
+			we used it like this already. the content of the style tag are css properties
+
+		">
+			<div class="centerMiddle">
+				<pre style="font-size:120%;">
+.stem {
+	background: var(--color);
+	width:var(--stemWidth); 
+	height: var(--fontHeight);
+}
+
+.leftLeaning {
+	transform:rotate(-20deg) 
+}
+
+.rightLeaning {
+	transform:rotate(20deg) 
+}
+				</pre>
+			</div>
+		</div>
+
+
+
+
+<div class="card build" notes="
+
+			we used it like this already. the content of the style tag are css properties
+
+		">
+			<div class="centerMiddle">
+				<pre style="font-size:120%;">
+.crossBar {
+	background: var(--color);  
+	height: var(--stemWidth); 
+}
+
+.counter {
+	transform-origin: center;
+	background: var(--negativeColor);    
+}
+</pre></div>
+		</div>
+
+
+
+<div class="card build" notes="
+
+			we used it like this already. the content of the style tag are css properties
+
+		">
+<div class="centerMiddle"><pre style="font-size:120%;">
+.a {
+	width:170px;
+}
+
+.a>.one {
+	left:40px;  
+}
+
+.a>.two {
+	left:110px;  
+}
+
+.a>.three {
+	left: 40px;
+	top: 110px;
+	width: 80px;
+}
+</pre></div>
+</div>
+
+<div class="card build" notes="
+
+			we used it like this already. the content of the style tag are css properties
+
+		">
+			<div class="centerMiddle">
+				<pre style="font-size:120%;">
+.a>.four {
+	top:-8px; 
+	width:170px;
+}
+
+.a>.five {
+	bottom:14px;
+	width:170px;
+}
+</pre></div>
+		</div>
+
+
+
+
+
+
+		<div class="card title" notes="
+
+			lets play with some of these in glitch
+
+		">
+			<div class="centerMiddle">
+				<h2 class="box"><a href="https://glitch.com/edit/#!/join/8b983238-1ba9-4e49-9f99-491a73a131fb">font drawing example</a></h2>
+			</div>
+		</div>
+
+
+	</body>
+
+	<script type="text/javascript">
+		
+
+	</script>
+
+	<script type="text/javascript" src="../assets/global.js"></script>
+</html>
