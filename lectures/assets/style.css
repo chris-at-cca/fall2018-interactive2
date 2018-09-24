@@ -45,7 +45,7 @@ h1, h2, h3, h4 {
 	font-weight: 100;
 	margin:0 0 18px;
 	font-family: 'Everson', monospace;
-	border-bottom: solid #eee 2px; 
+	/*border-bottom: solid #eee 2px; */
 	display: table;
 }
 h1 {
@@ -205,6 +205,43 @@ pre strong {
 	position: absolute;
 	bottom: 0px;
 }
+
+.dark {
+	background: black;
+	color: #f2f2f2;
+}
+
+.dark strong {
+	color: black;
+}
+.dark strong strong {
+	background: yellow;
+} 
+
+.html {
+	color: lightgreen;
+}
+
+.js {
+	color: yellow;
+}
+
+.css {
+	color: cyan;
+}
+
+.hide {
+	opacity: 0;
+}
+
+.dark a {
+	color: pink;
+}
+
+.offset {
+	padding: 20px;
+}
+
 
 @media print {
 	* {

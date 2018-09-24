@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- adapted from lectures by Will Ruby http://fall2018.will.graphics/ -->
+		<meta charset="utf-8">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name = "viewport" content = "width = device-width,initial-scale = 1, user-scalable = no">
+		<link rel="icon" type="image/png" href="favicon.png">
+		<title>JQuery Refresh</title>
+		<link rel="stylesheet" type="text/css" href="../assets/fonts.css">
+		<link rel="stylesheet" type="text/css" href="../assets/style.css">
+		<style>
+			:root {
+			  --fontHeight: 200px;
+			  --color: black;
+			  --negativeColor: white;
+			  --baseKern: 20px;
+			  --stemWidth: 20px;
+			}
+
+			.card {
+				position: relative;
+			}
+
+			.container {
+				width: 100vw;
+				height: 100vh;
+				position: relative;
+			}
+
+			#values {
+				position: absolute;
+				top: 20px;
+				left: 20px;
+				color: white;
+			}
+
+			#element {
+				position: absolute;
+				top: calc(50% - 50px);
+				left: calc(50% - 50px);
+				height: 100px;
+				width: 100px;
+				background: rgba(255,255,255,1);
+			}			
+		</style>
+	</head>
+	<body>
+
+	<!-- slide -->
+	<div class="card title" notes="">
+		<div class="centerMiddle">
+			<h2 class="box">
+				JQuery Basics Refresh
+			</h2>
+		</div>
+	</div>
+
+	<!-- slide -->
+	<div class="card" notes="">
+			<div class="centerMiddle">
+				<pre style="font-size:140%;">
+<strong>Javascript</strong>
+The programming language of HTML and the Web.
+Interaction with the user, animation, etc, 
+typically all done with JavaScript. 
+				</pre>
+			</div>
+	</div>
+
+
+	<!-- slide -->
+	<div class="card" notes="">
+			<div class="centerMiddle">
+				<pre style="font-size:140%;">
+<strong>jQuery</strong>
+jQuery is a library, or set of helpful add-ons, 
+to the JavaScript programming language. 
+
+jQuery is much better at giving you immediate, 
+visual results than regular JavaScript. 
+
+Clicking, fading, blinking, changing color, etc... 
+all easily done with jQuery! 
+				</pre>
+			</div>
+	</div>
+
+	<!-- slide -->
+	<div class="card" notes="">
+			<div class="centerMiddle">
+				<pre style="font-size:140%;">
+<strong>How it works</strong>
+ To get the most out of jQuery, we should 
+review how an HTML page is put together.
+
+An HTML document is structured according to 
+the <strong>Document Object Model</strong>, or “<strong>DOM</strong>”.
+
+It’s by interacting with the DOM that jQuery 
+is able to access and modify HTML.
+
+The DOM consists of every element on the page, 
+laid out in a hierarchical way that reflects 
+the way the HTML document is ordered.
+ 				</pre>
+			</div>
+	</div>
+
+	<!-- slide -->
+	<div class="card" notes="">
+			<div class="centerMiddle">
+				<h2 class="centerMiddle">The DOM</h2>
+				<img src="img/dom.png" />
+			</div>
+	</div>	
+
+	<!-- slide -->
+	<div class="card" notes="">
+			<div class="centerMiddle">
+				<pre style="font-size:140%;">
+<strong>Load jQuery Two options:</strong>
+1) Use Google’s hosted version 
+   find this by googling “jQuery Google” 
+ + Pros: Less steps to set up 
+ - Cons: If you’re offline, your local
+   version won’t work
+
+2) Download jQuery and link to your own
+ + Pros: Will work if you’re offline 
+ - Cons: More steps to set up
+ 				</pre>
+			</div>
+	</div>
+
+	<!-- slide -->
+	<div class="card dark" notes="">
+			<div class="centerMiddle">
+				<h2 class="centerMiddle">Load a JS File</h2>
+				<img src="img/load-file.png" style="width: 800px; height: auto;" />
+			</div>
+	</div>		
+
+	<!-- slide -->
+
+	<div class="card dark" notes="">
+			<div class="centerMiddle">
+				<pre style="font-size:140%;">
+<strong>Load jQuery </strong>
+It’s best to load any JavaScript 
+before the closing body tag.
+ 				</pre>
+			</div>
+	</div>	
+
+	<!-- slide -->	
+	<div class="card dark" notes="">
+			<div class="centerMiddle">
+				<h3 class="centerMiddle">Option 1</h3>
+				<pre style="font-size:140%;">
+
+<span class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;title>&lt;/title&gt;
+&lt;/head&gt;
+	&lt;body&gt;
+	&lt;div>&lt;/div&gt;
+	<strong>&lt;script <strong>src="https://ajax.googleapis.com/ajax/
+libs/jquery/2.2.2/jquery.min.js"</strong>&gt;&lt;/script&gt;</strong>
+	<strong>&lt;script type="text/javascript" <strong>src="assets/js/
+	script.js"</strong>&gt;&lt;/script&gt;</strong>
+	&lt;/body&gt;
+&lt;/html&gt;</span>
+ 				</pre>
+			</div>
+	</div>		
+
+	<!-- slide -->
+	<div class="card dark" notes="">
+			<div class="centerMiddle">
+				<h3 class="centerMiddle">Option 2</h3>
+				<pre style="font-size:140%;">
+
+<span class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;title>&lt;/title&gt;
+&lt;/head&gt;
+	&lt;body&gt;
+	&lt;div>&lt;/div&gt;
+	<strong>&lt;script type="text/javascript" <strong>src="assets/js/
+jquery.min.js"</strong>&gt;&lt;/script&gt;</strong>
+	<strong>&lt;script type="text/javascript" <strong>src="assets/js/
+script.js"</strong>&gt;&lt;/script&gt;&gt;</strong>
+	&lt;/body&gt;
+&lt;/html&gt;</span>	
+ 				</pre>
+			</div>
+	</div>
+
+	<!-- slide -->
+	<div class="card dark" notes="">
+			<div class="centerMiddle">
+				<pre style="font-size:140%;">
+<strong>Document Ready </strong>
+$() is special to jQuery. It says: 
+“Hey, jQuery things are about to happen.”
+
+Next, we’ll need to start up our jQuery 
+magic using the  $(document).ready(); 
+
+syntax. It works like this:
+
+<span class="js">$('document').ready(function(){
+	// jQuery magic;
+});</span>
+ 				</pre>
+			</div>
+	</div>		
+
+	<!-- slide -->
+	<div class="card dark" notes="">
+			<div class="centerMiddle">
+				<pre style="font-size:140%;">
+<strong>Selectors </strong>
+The first thing you’ll want to do is 
+select elements from the DOM to do 
+things with. Selecting in jQuery works 
+just like selecting in CSS.
+
+<span class="js">$('selector').someAction;</span>
+ 				</pre>
+			</div>
+	</div>	
+
+	<!-- slide -->	
+	<div class="card dark" notes="">
+			<div class="centerMiddle">
+				<pre style="font-size:140%;">
+<strong>For example</strong>
+
+<span class="js">$('h1').hide();
+$('h2 .small').fadeOut();
+$('p.intro').show();</span>
+
+<span class="css hide">h1 { color: blue; }
+h2 .small { font-size: 10px; }
+p.intro { background: yellow; }</span>
+ 				</pre>
+			</div>
+	</div>	
+
+	<!-- slide -->
+	<div class="card dark build" notes="
+so it’s just like targeting elements in css, but within the single quotes inside the parentheses
+	">
+			<div class="centerMiddle">
+				<pre style="font-size:140%;">
+<strong>For example</strong>
+
+<span class="js">$('h1').hide();
+$('h2 .small').fadeOut();
+$('p.intro').show();</span>
+
+<span class="css">h1 { color: blue; }
+h2 .small { font-size: 10px; }
+p.intro { background: yellow; }</span>
+ 				</pre>
+			</div>
+	</div>	
+	
+	<!-- slide -->
+	<div class="card dark" notes="
+you can select classes and IDs just like in css – with a . or a #.
+
+you can also select elements, like in css, just by calling the element name
+	">
+			<div class="centerMiddle">
+				<pre style="font-size:140%;">
+<strong>Class Selector:</strong>
+<span class="js">$('.yellow').show;</span>
+
+<strong>ID Selector:</strong>
+<span class="js">$('#letterA').fadeIn;</span>
+
+<strong>Element Selector:</strong>
+<span class="js">$('div').hide;</span>
+ 				</pre>
+			</div>
+	</div>		
+
+	<!-- slide -->
+	<div class="card dark" notes="
+you can select classes and IDs just like in css – with a . or a #.
+
+you can also select elements, like in css, just by calling the element name
+	">
+		<div class="centerMiddle">
+			<pre style="font-size:140%;">
+<strong>Events </strong>
+You can also tie changes to events the user 
+performs such as clicks, scrolls, etc, etc.
+
+<span class="js">$('thingToTouch').event(function() {
+	$('thingToAffect').effect();
+});</span>
+
+“Thing To Touch” is the HTML element you’ll 
+click on, hover over, or otherwise interact 
+with, and “thing to affect” is the HTML element 
+that fades away, changes size, or undergoes 
+some other transformation.
+ 			</pre>
+		</div>
+	</div>		
+
+
+	<!-- slide -->
+	<div class="card dark" notes="">
+		<div class="container">
+			<div id="values">
+				<div id="scroll-pos"></div>
+				<div id="mouse-pos"></div>
+				<div id="window-size"></div>
+			</div>
+			<div id="element">
+			</div>
+		</div>
+	</div>
+
+	<!-- slide -->
+	<div class="card dark" notes="">
+		<div class="centerMiddle">
+			<pre style="font-size:140%;">
+<strong>Events — click </strong>
+Click event example:
+
+<span class="js">$('button').click(function() {
+	$('.announcement').toggle();
+});</span>
+				</pre>			
+		</div>
+		 <a class="bottom left offset" href="http://jsfiddle.net/w0a3Lgx6/" target="_blank">http://jsfiddle.net/w0a3Lgx6/</a>
+
+	</div>	
+
+
+	<!-- slide -->
+	<div class="card dark" notes="">
+		<div class="centerMiddle">
+			<pre style="font-size:140%;">
+<strong>Events — mouse</strong>
+Mouse (enter and leave) example:
+
+<span class="js">$('.red-circle').mouseenter(function() {
+	$('.blue-square').fadeOut();
+});
+
+$('.red-circle').mouseleave(function() {
+	$('.blue-square').fadeIn();
+});</span>
+				</pre>			
+		</div>
+		 <a class="bottom left offset" href="http://jsfiddle.net/cvyxp15z/" target="_blank">http://jsfiddle.net/cvyxp15z/</a>
+
+	</div>	
+
+	<!-- slide -->
+	<div class="card dark" notes="">
+		<div class="centerMiddle">
+			<pre style="font-size:140%;">
+<strong>Events — hover</strong>
+Hover example:
+
+<span class="js">$('.red-circle').hover(function() {
+	$('.blue-square').fadeOut();
+}, function() {
+	$('.blue-square').fadeIn();
+});</span>
+
+Hover is very similar to mouse (enter and leave), 
+ just a little more elegant. </span>
+				</pre>			
+		</div>
+		 <a class="bottom left offset" href="http://jsfiddle.net/o1udqwbm/" target="_blank">http://jsfiddle.net/o1udqwbm/</a>
+	</div>		
+
+	<!-- slide -->
+	<div class="card dark" notes="">
+		<div class="centerMiddle">
+			<pre style="font-size:140%;">
+<strong>Events — scroll</strong>
+Scroll example:
+
+<span class="js">$('window').scroll(function() {
+	alert('You just scrolled!');
+});</span>
+
+Hover is very similar to mouse (enter and leave), 
+ just a little more elegant. </span>
+				</pre>			
+		</div>
+		 <a class="bottom left offset" href="http://jsfiddle.net/p0uxmv0n/" target="_blank">http://jsfiddle.net/p0uxmv0n/</a>
+	</div>		
+
+	<!-- slide -->
+	<div class="card dark" notes="">
+		<div class="centerMiddle">
+			<pre style="font-size:140%;">
+<strong>Events — keypress</strong>
+ Keypress example:
+
+<span class="js">$('#input').keypress(function(e) {
+	$('#output').append(String.fromCharCode(e.which));
+	
+	// the keycode for 'a' is 97
+	if ( e.which == 97 ) {
+		$('#output').addClass('special');
+	}
+
+});</span>
+			</pre>			
+		</div>
+		 <a class="bottom left offset" href="http://jsfiddle.net/hamamoto/edjmfmno/" target="_blank">http://jsfiddle.net/hamamoto/edjmfmno/</a>
+	</div>		
+
+	<!-- slide -->
+	<div class="card dark" notes="">
+		<div class="centerMiddle">
+			<pre style="font-size:140%;">
+<strong>Adding and Removing Classes</strong>
+ add/remove class example:
+
+<span class="js">$('#on').click(function(e) {
+   $(‘#square’).addClass('rounded');
+});
+
+$('#off').click(function(e) {
+   $('#square').removeClass('rounded');
+});</span>
+			</pre>			
+		</div>
+		 <a class="bottom left offset" href="http://jsfiddle.net/hamamoto/edjmfmno/2/" target="_blank">http://jsfiddle.net/hamamoto/edjmfmno/2/</a>
+	</div>	
+
+	<!-- slide -->
+	<div class="card dark" notes="">
+		<div class="centerMiddle">
+			<pre style="font-size:140%;">
+<strong>'this'</strong>
+  The 'this' keyword refers to the jQuery
+object you’re currently doing something with.
+
+$(this), and the event will only affect the 
+element you’re currently doing something with 
+(for example, clicking on or mousing over).
+
+<span class="js">$('div').click(function() {
+	$(this).fadeOut('slow');
+});
+</span>
+			</pre>			
+		</div>
+	</div>
+
+
+	</body>
+	<script type="text/javascript" src="../assets/global.js"></script>
+	<script type="text/javascript" src="../assets/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		var xPos;
+		var yPos;
+		var winWidth;
+		var winHeight;
+
+		// check when the mouse moves
+		$(document).mousemove(function(e){
+			
+			// update mouse x and y position
+			xPos = e.pageX;
+			yPos = e.pageY;
+			$('#mouse-pos').html('x-pos: ' + xPos + '<br />y-pos: ' + yPos);
+
+			// change div with the id "element"s CSS when you move your mouse 
+			$('#element').css({
+				'transform' : 'rotate(' + xPos + 'deg) scale(' + xPos/100 + ')',
+				'background-color' : 'rgb('+ xPos/5 + ', ' + xPos/3 + ', ' + (xPos*yPos)	/10 + ')',
+			});
+		});
+
+
+		// check when the user clicks
+		$('.container').click(function(e){
+			
+			// store the click position
+			xPos = e.pageX;
+			yPos = e.pageY;
+
+			// add text to the page where the user clicks
+			$('body').append('<div style="top: ' + yPos +'px; left:' + xPos + 'px; position: absolute; z-index: 1000; color: red">' + xPos + ', ' + yPos + '</div>')
+
+		});	
+
+		// check when the window is resized
+		$(window).resize(function() {
+
+			// update the webpage with the window dimensions
+			winWidth = $(window).width();	
+			winHeight = $(window).height();
+			$('#window-size').html('window width: ' + winWidth + '<br />window height: ' + winHeight);
+		});
+	</script>
+</html>

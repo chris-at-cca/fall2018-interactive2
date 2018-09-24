@@ -105,6 +105,10 @@
 			  height: 20px;
 			  background: var(--negativeColor);
 			}
+
+			.border>div {
+				border: 1px solid red;
+			}
 			
 
 		</style>
@@ -244,7 +248,13 @@ to make reusable modules
 		</div>
 
 
-<div class="card">
+<div class="card" notes="
+
+			this is a sample 'A' i've made with CSS and HTML.
+
+			let's look at it outlined
+
+		">
 	<div class="centerMiddle">
 		<div class="a letter">
         
@@ -263,9 +273,35 @@ to make reusable modules
 	</div>
 </div>
 
+
+<div class="card" notes="
+
+			here you can see how i've set up this effect with form and counterforms
+
+		">
+	<div class="centerMiddle">
+		<div class="a letter border">
+        
+        <!-- stem -->
+        <div class="stem rightLeaning one"></div>
+        <div class="stem leftLeaning two"></div>
+        
+        <!-- crossbar -->
+        <div class="crossBar three"></div>
+
+        <!-- flat-ends -->
+        <div class="counter four"></div>
+        <div class="counter five"></div>
+
+      </div>  
+	</div>
+</div>
+
 <div class="card build" notes="
 
-			we used it like this already. the content of the style tag are css properties
+			the letter has a parent container
+			then absolutely positioned strokes
+			and counters or negative space to create the terminals
 
 		">
 			<div class="centerMiddle">
@@ -284,7 +320,8 @@ to make reusable modules
 
 <div class="card build" notes="
 
-			we used it like this already. the content of the style tag are css properties
+			the parent container is floated, so elements can be stacked in a line
+			they have relative positioning so elements inside can be absolutely positioned
 
 		">
 			<div class="centerMiddle">
@@ -300,10 +337,47 @@ to make reusable modules
 }
 </pre></div></div>
 
+<div class="card build" notes="
+
+			the parent container is floated, so elements can be stacked in a line
+			they have relative positioning so elements inside can be absolutely positioned
+
+		">
+			<div class="centerMiddle">
+				<pre style="font-size:120%;">
+.letter {
+	float:left;
+	<strong>position:relative;</strong>
+	padding-right:var(--baseKern); 
+	height:calc(var(--fontHeight) + 20px);
+}
+.letter * {
+	position:absolute;
+}
+</pre></div></div>
 
 <div class="card build" notes="
 
 			we used it like this already. the content of the style tag are css properties
+
+		">
+			<div class="centerMiddle">
+				<pre style="font-size:120%;">
+.letter {
+	float:left;
+	position:relative; 
+	padding-right:var(--baseKern); 
+	height:calc(var(--fontHeight) + 20px);
+}
+.letter * {
+	<strong>position:absolute;</strong>
+}
+</pre></div></div>
+
+
+<div class="card build" notes="
+
+			i also just want to call out 'calc'. this can be used to calculate css values in relation to other values
 
 		">
 			<div class="centerMiddle">
@@ -321,9 +395,16 @@ to make reusable modules
 
 
 
+
+
+
 <div class="card build" notes="
 
-			we used it like this already. the content of the style tag are css properties
+			the stems are using the CSS properties we talked about before
+
+			this means, i can for instance change the color in one place on :root, and it will adjust all these values
+
+			and i'm using transform to rotate the strokes
 
 		">
 			<div class="centerMiddle">
@@ -350,7 +431,7 @@ to make reusable modules
 
 <div class="card build" notes="
 
-			we used it like this already. the content of the style tag are css properties
+			and using colors i've defined for positive and negative space to make the crossbar and counter forms for the terminals
 
 		">
 			<div class="centerMiddle">
@@ -371,7 +452,7 @@ to make reusable modules
 
 <div class="card build" notes="
 
-			we used it like this already. the content of the style tag are css properties
+			then i'm using CSS to adjust the absolute position of each element
 
 		">
 <div class="centerMiddle"><pre style="font-size:120%;">
@@ -413,10 +494,6 @@ to make reusable modules
 }
 </pre></div>
 		</div>
-
-
-
-
 
 
 		<div class="card title" notes="
