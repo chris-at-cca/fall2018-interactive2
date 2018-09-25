@@ -58,7 +58,11 @@
 	</div>
 
 	<!-- slide -->
-	<div class="card" notes="">
+	<div class="card" notes="
+while you can do a limited number of animations, and interactivity in a single page just with CSS.
+
+keyframe animations and transitions. triggered by hover. javascript lets you detect much more, and many of the pages we use online are using javascript to make them more interactive
+	">
 			<div class="centerMiddle">
 				<pre style="font-size:140%;">
 <strong>Javascript</strong>
@@ -71,7 +75,9 @@ typically all done with JavaScript.
 
 
 	<!-- slide -->
-	<div class="card" notes="">
+	<div class="card" notes="
+this is partially due to it’s prebuilt visual effects, but jquery also makes javascript syntax way easier to understand, enabling non-programmers to program
+	">
 			<div class="centerMiddle">
 				<pre style="font-size:140%;">
 <strong>jQuery</strong>
@@ -88,7 +94,9 @@ all easily done with jQuery!
 	</div>
 
 	<!-- slide -->
-	<div class="card" notes="">
+	<div class="card" notes="
+do you guys remember the DOM from interactive 1?
+">
 			<div class="centerMiddle">
 				<pre style="font-size:140%;">
 <strong>How it works</strong>
@@ -109,7 +117,15 @@ the way the HTML document is ordered.
 	</div>
 
 	<!-- slide -->
-	<div class="card" notes="">
+	<div class="card" notes="
+you can visualize the DOM as a branching structure. Javascript moves up and down these branches and selects specific elements.
+
+you may change the color of that <p>
+
+or add some content to that <h1>
+
+or completely remove it from the DOM
+	">
 			<div class="centerMiddle">
 				<h3 class="centerMiddle">The DOM</h3>
 				<img src="img/dom.png" />
@@ -135,7 +151,11 @@ the way the HTML document is ordered.
 	</div>
 
 	<!-- slide -->
-	<div class="card dark" notes="">
+	<div class="card dark" notes="
+you link to a javascript file in a similar manner to a CSS file. i’d typically put it in it’s own folder like a css file.
+
+in order to use jQuery you need to load the jquery library, then load your own javascript code to interact with it
+	">
 			<div class="centerMiddle">
 				<h3 class="centerMiddle">Load a JS File</h3>
 				<img src="img/load-file.png" style="width: 100%; max-width: 600px; height: auto;" />
@@ -155,7 +175,42 @@ before the closing body tag.
 	</div>	
 
 	<!-- slide -->	
-	<div class="card dark" notes="">
+	<div class="card dark" notes="
+you can see here right before the closing body tag i am loading jquery
+
+it’s important you load jQuery before you load your own script file.
+
+the library is added so you can write javascript with jquery. then you have your own file where you define your own code.
+	">
+			<div class="centerMiddle">
+				<h3 class="centerMiddle">Option 1</h3>
+				<pre style="font-size:140%;">
+
+<span class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;title>&lt;/title&gt;
+&lt;/head&gt;
+	&lt;body&gt;
+	&lt;div>&lt;/div&gt;
+	<strong>&lt;script src="https://ajax.googleapis.com/ajax/
+	libs/jquery/3.3.1/jquery.min.js"&gt;&lt;/script&gt;</strong>
+	<strong>&lt;script type="text/javascript" src="assets/js/
+	script.js"&gt;&lt;/script&gt;</strong>
+	&lt;/body&gt;
+&lt;/html&gt;</span>
+ 				</pre>
+			</div>
+	</div>		
+
+	<!-- slide -->	
+	<div class="card dark build" notes="
+you can see here right before the closing body tag i am loading jquery
+
+it’s important you load jQuery before you load your own script file.
+
+the library is added so you can write javascript with jquery. then you have your own file where you define your own code.
+	">
 			<div class="centerMiddle">
 				<h3 class="centerMiddle">Option 1</h3>
 				<pre style="font-size:140%;">
@@ -168,17 +223,41 @@ before the closing body tag.
 	&lt;body&gt;
 	&lt;div>&lt;/div&gt;
 	<strong>&lt;script <strong>src="https://ajax.googleapis.com/ajax/
-libs/jquery/2.2.2/jquery.min.js"</strong>&gt;&lt;/script&gt;</strong>
+	libs/jquery/3.3.1/jquery.min.js"</strong>&gt;&lt;/script&gt;</strong>
 	<strong>&lt;script type="text/javascript" <strong>src="assets/js/
 	script.js"</strong>&gt;&lt;/script&gt;</strong>
 	&lt;/body&gt;
 &lt;/html&gt;</span>
  				</pre>
 			</div>
-	</div>		
+	</div>			
 
 	<!-- slide -->
-	<div class="card dark" notes="">
+	<div class="card dark" notes="here you can see i’m using my own local copy of jQuery.">
+			<div class="centerMiddle">
+				<h3 class="centerMiddle">Option 2</h3>
+				<pre style="font-size:140%;">
+
+<span class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;title>&lt;/title&gt;
+&lt;/head&gt;
+	&lt;body&gt;
+	&lt;div>&lt;/div&gt;
+	<strong>&lt;script type="text/javascript" src="assets/js/
+jquery.min.js"&gt;&lt;/script&gt;</strong>
+	<strong>&lt;script type="text/javascript" src="assets/js/
+script.js"&gt;&lt;/script&gt;&gt;</strong>
+	&lt;/body&gt;
+&lt;/html&gt;</span>	
+ 				</pre>
+			</div>
+	</div>
+
+
+	<!-- slide -->
+	<div class="card dark build" notes="here you can see i’m using my own local copy of jQuery.">
 			<div class="centerMiddle">
 				<h3 class="centerMiddle">Option 2</h3>
 				<pre style="font-size:140%;">
@@ -198,10 +277,16 @@ script.js"</strong>&gt;&lt;/script&gt;&gt;</strong>
 &lt;/html&gt;</span>	
  				</pre>
 			</div>
-	</div>
+	</div>	
 
 	<!-- slide -->
-	<div class="card dark" notes="">
+	<div class="card dark" notes="
+the $() syntax is special to jquery. it says: Hey, jquery…
+
+document.ready, or another event, is needed in every js document that uses jquery so that jQuery knows the page is ready to be interacted with. 
+
+all your jQuery code will go inside that document ready function where the comment is. 
+	">
 			<div class="centerMiddle">
 				<pre style="font-size:140%;">
 <strong>Document Ready </strong>
@@ -221,7 +306,11 @@ syntax. It works like this:
 	</div>		
 
 	<!-- slide -->
-	<div class="card dark" notes="">
+	<div class="card dark" notes="
+these work just like css. so, you can select a tag. a class within a tag, etc.
+
+the $ tells jquery to begin looking for something, then inside the () you’ll choose which element to select
+	">
 			<div class="centerMiddle">
 				<pre style="font-size:140%;">
 <strong>Selectors </strong>
@@ -236,7 +325,9 @@ just like selecting in CSS.
 	</div>	
 
 	<!-- slide -->	
-	<div class="card dark" notes="">
+	<div class="card dark" notes="
+so it’s just like targeting elements in css, but within the single quotes inside the parentheses
+	">
 			<div class="centerMiddle">
 				<pre style="font-size:140%;">
 <strong>For example</strong>
@@ -293,9 +384,9 @@ you can also select elements, like in css, just by calling the element name
 
 	<!-- slide -->
 	<div class="card dark" notes="
-you can select classes and IDs just like in css – with a . or a #.
+first you find a thing to touch. then trigger an event. then find the thing to affect. and trigger an effect.
 
-you can also select elements, like in css, just by calling the element name
+events are really where jQuery and javascript will enable new interactions in your projects. tying these changes of the DOM to events is how you add interactivity to the page.
 	">
 		<div class="centerMiddle">
 			<pre style="font-size:140%;">
@@ -446,7 +537,9 @@ $('#off').click(function(e) {
 	</div>	
 
 	<!-- slide -->
-	<div class="card dark" notes="">
+	<div class="card dark" notes="
+this is special to jquery. it can be a bit confusing, but it’s easiest to think of as the object you’re currently doing something with. so in this case it is the div you’ve clicked on.
+	">
 		<div class="centerMiddle">
 			<pre style="font-size:140%;">
 <strong>'this'</strong>
@@ -462,6 +555,17 @@ element you’re currently doing something with
 });
 </span>
 			</pre>			
+		</div>
+	</div>
+
+	<!-- slide -->
+	<div class="card title" notes="
+
+		lets play with some of these in glitch
+
+	">
+		<div class="centerMiddle">
+			<h2 class="box"><a href="https://cosmic-layer.glitch.me/" target="_blank">jQuery Events Example</a></h2>
 		</div>
 	</div>
 
