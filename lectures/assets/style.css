@@ -45,7 +45,7 @@ h1, h2, h3, h4 {
 	font-weight: 100;
 	margin:0 0 18px;
 	font-family: 'Everson', monospace;
-	/*border-bottom: solid #eee 2px; */
+	border-bottom: solid #eee 2px; 
 	display: table;
 }
 h1 {
@@ -206,42 +206,31 @@ pre strong {
 	bottom: 0px;
 }
 
-.dark {
-	background: black;
-	color: #f2f2f2;
+/* image slides */
+
+.imageSlide img, .imageSlide video{
+	max-height: 80vh;
+	max-width: 80vw;
+	height: auto;
+	width: auto;
+	margin-top: 10vh; 
 }
 
-.dark strong {
-	color: black;
-}
-.dark strong strong {
-	background: yellow;
-} 
-
-.html {
-	color: lightgreen;
+.imageSlide p{
+	height: 10vh;
+	padding: 10px;
+	box-sizing: border-box;
 }
 
-.js {
-	color: yellow;
-}
+/* quote slides */
 
-.css {
-	color: cyan;
+p.quote {
+	max-width: 80vw;
+	margin: auto;
+	height: auto;
+	font-size: 2em;
+	line-height: 1.2em;
 }
-
-.hide {
-	opacity: 0;
-}
-
-.dark a {
-	color: white;
-}
-
-.offset {
-	padding: 20px;
-}
-
 
 @media print {
 	* {
