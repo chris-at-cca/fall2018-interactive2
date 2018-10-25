@@ -41,6 +41,8 @@ body {
 	font-family: 'Everson', 'Courier New', Courier, monospace;
 	box-sizing: border-box;
 	padding: 20px;
+
+	background: #ffde00;
 }
 
 h1, h2, p, body {
@@ -59,21 +61,12 @@ a {
 
 a:hover {
 	color: white;
+	cursor: move;
 }
 
 div {
-	position: relative;
+	position: absolute;
 	z-index: 1;
+	width: 585px;
+	cursor: move;
 }
-
-div.bg {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  transition: opacity 3s;
-  top: 0px;
-  left: 0px;
-  z-index: 0;
-}
-
-div.hidden { opacity: 0; z-index: 0}

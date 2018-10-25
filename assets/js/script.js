@@ -1,25 +1,23 @@
-function newGradient() {
-  var c1 = {
-    r: Math.floor(Math.random()*255),
-    g: Math.floor(Math.random()*255),
-    b: Math.floor(Math.random()*255)
-  };
-  var c2 = {
-    r: Math.floor(Math.random()*255),
-    g: Math.floor(Math.random()*255),
-    b: Math.floor(Math.random()*255)
-  };
-  c1.rgb = 'rgb('+c1.r+','+c1.g+','+c1.b+')';
-  c2.rgb = 'rgb('+c2.r+','+c2.g+','+c2.b+')';
-  return 'radial-gradient(at top left, '+c1.rgb+', '+c2.rgb+')';
-}
-
-function rollBg() {
-  $('.bg.hidden').css('background', newGradient());
-  $('.bg').toggleClass('hidden');
-}
-
 $(document).ready(function() {
-  rollBg();
-  setInterval(rollBg, 3000);
+
+  var winWidth = $(window).width();
+  var winHeight = $(window).height();;
+
+  $('div').draggable();
+
+  $('div').each(function(){
+    
+    var rotation = Math.floor(Math.random() * 360);
+    var xPos = Math.floor(Math.random() * winHeight);
+    var yPos = Math.floor(Math.random() * winWidth);
+
+    console.log(yPos);
+
+    $(this).css({
+      'transform' : 'rotate(' + rotation + 'deg)',
+      'top' : yPos+'px',
+      'left' : xPos+'px',
+    });
+  });
+
 });
