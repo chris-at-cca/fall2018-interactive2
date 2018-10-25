@@ -37,12 +37,43 @@
 
 /* styling */
 
-body {font-family: 'Everson', 'Courier New', Courier, monospace;}
+body {
+	font-family: 'Everson', 'Courier New', Courier, monospace;
+	box-sizing: border-box;
+	padding: 20px;
+}
 
-h1, h2, p {
+h1, h2, p, body {
 	font-size: 14px;
+	font-size: 44px;
+	font-weight: normal;
 }
 
 h1 {
-	text-decoration: underline;
+	text-decoration: none;
 }
+
+a {
+	color: black;
+}
+
+a:hover {
+	color: white;
+}
+
+div {
+	position: relative;
+	z-index: 1;
+}
+
+div.bg {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  transition: opacity 3s;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+}
+
+div.hidden { opacity: 0; z-index: 0}

@@ -1,0 +1,16 @@
+body {
+	background: black;	
+	min-height: 300vh;
+	min-width: 100vw;
+}
+
+
+.circle {
+	background: white;
+	width: 10px;
+	height: 10px;
+	border-radius: 10000px;
+	margin: 50px;
+
+	float: left;
+}

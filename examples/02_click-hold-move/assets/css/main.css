@@ -1,0 +1,20 @@
+body {
+	background: purple;	
+	min-height: 100vh;
+	min-width: 100vw;
+}
+
+
+#circle {
+	background: white;
+	width: 10px;
+	height: 10px;
+	border-radius: 10000px;
+	position: absolute;
+	top: calc(50vh - 5px);
+	left: calc(50vw - 5px);
+
+	transform-origin: center;
+
+	/*transition: all 1ms ease;*/
+}
