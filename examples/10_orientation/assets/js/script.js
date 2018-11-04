@@ -29,5 +29,7 @@ function orientation(event){
   );
 }
 
+$('body').css('background', 'rgb('+math.floor(event.alpha)+', '+math.floor(event.beta)+', '+math.floor(event.gamma)+')')
+
 
 });
